@@ -4,16 +4,18 @@ public class TaskConfig {
     private Integer id;
     private String cronExpression;
     private String taskName;
+    private String taskEnName;
     private String taskDescribe;
     private String cmd;
+    private String type;//cmd or fixed
     private Integer enable;
     private Integer timeOut;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -33,6 +35,14 @@ public class TaskConfig {
         this.taskName = taskName;
     }
 
+    public String getTaskEnName() {
+        return taskEnName;
+    }
+
+    public void setTaskEnName(String taskEnName) {
+        this.taskEnName = taskEnName;
+    }
+
     public String getTaskDescribe() {
         return taskDescribe;
     }
@@ -49,19 +59,27 @@ public class TaskConfig {
         this.cmd = cmd;
     }
 
-    public int getEnable() {
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public Integer getEnable() {
         return enable;
     }
 
-    public void setEnable(int enable) {
+    public void setEnable(Integer enable) {
         this.enable = enable;
     }
 
-    public int getTimeOut() {
+    public Integer getTimeOut() {
         return timeOut;
     }
 
-    public void setTimeOut(int timeOut) {
+    public void setTimeOut(Integer timeOut) {
         this.timeOut = timeOut;
     }
 
@@ -71,8 +89,10 @@ public class TaskConfig {
                 "id=" + id +
                 ", cronExpression='" + cronExpression + '\'' +
                 ", taskName='" + taskName + '\'' +
+                ", taskEnName='" + taskEnName + '\'' +
                 ", taskDescribe='" + taskDescribe + '\'' +
                 ", cmd='" + cmd + '\'' +
+                ", type='" + type + '\'' +
                 ", enable=" + enable +
                 ", timeOut=" + timeOut +
                 '}';

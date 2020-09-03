@@ -1,16 +1,18 @@
-package com.gczhu.schedule.service.impl;
+package com.gczhu.schedule.task;
 
 import com.gczhu.schedule.pojo.TaskConfig;
-import com.gczhu.schedule.service.TaskExecuteService;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import java.io.*;
 
-@Service
-public class CmdTaskExecuteService implements TaskExecuteService {
+/**
+ *
+ */
+@Component
+public class CmdTaskAdapter implements TaskAdapter {
     
     @Override
-    public boolean doService(TaskConfig taskConfig) {
+    public boolean runTask(TaskConfig taskConfig) {
         Process exec = null;
         int exitValue = 1;
         InputStream inputStream = null;

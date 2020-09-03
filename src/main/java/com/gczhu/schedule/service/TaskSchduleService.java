@@ -1,7 +1,9 @@
 package com.gczhu.schedule.service;
 
 import com.gczhu.schedule.task.Task;
-
+/*
+ *负责持久化任务配置、调度触发任务
+ */
 public interface TaskSchduleService {
 
     public void addTask(Task task);//保存任务配置并调度

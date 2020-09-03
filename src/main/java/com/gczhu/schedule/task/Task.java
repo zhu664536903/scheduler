@@ -1,19 +1,18 @@
 package com.gczhu.schedule.task;
 
 import com.gczhu.schedule.pojo.TaskConfig;
-import com.gczhu.schedule.service.TaskExecuteService;
 
 public class Task implements Runnable{
-    private TaskExecuteService taskExecuteService;
-    private TaskConfig taskConfig;
-    public Task(TaskConfig taskConfig, TaskExecuteService taskExecuteService) {
-        this.taskExecuteService = taskExecuteService;
+    private TaskAdapter taskAdapter; //执行内容
+    private TaskConfig taskConfig;//任务配置
+    public Task(TaskConfig taskConfig, TaskAdapter taskAdapter) {
+        this.taskAdapter = taskAdapter;
         this.taskConfig = taskConfig;
     }
 
     @Override
     public void run() {
-        taskExecuteService.doService(taskConfig);
+        taskAdapter.runTask(taskConfig);
     }
 
     public TaskConfig getTaskConfig() {

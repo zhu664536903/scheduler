@@ -2,7 +2,7 @@ package com.gczhu.schedule.pojo;
 
 import java.util.Date;
 
-public class TaskExecute {
+public class TaskExecuteLog {
     private Integer id;
     private Integer taskId;
     private Date planStartTime;//计划启动时间
