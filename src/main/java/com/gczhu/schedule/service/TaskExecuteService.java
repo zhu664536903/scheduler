@@ -7,4 +7,5 @@ import com.gczhu.schedule.pojo.TaskConfig;
  */
 public interface TaskExecuteService {
     public void doService(TaskConfig taskConfig);
+    public String getTaskName();
 }

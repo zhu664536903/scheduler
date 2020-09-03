@@ -6,6 +6,7 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 import org.springframework.scheduling.support.CronTrigger;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ScheduledFuture;
@@ -66,5 +67,9 @@ public class SpringTaskSchduleService implements TaskSchduleService {
         //创建任务
         ScheduledFuture<?> future = scheduler.schedule(task, new CronTrigger(task.getTaskConfig().getCronExpression()));
         map.putIfAbsent(String.valueOf(task.getTaskConfig().getId()),future);
+    }
+    @PostConstruct
+    public void initTask(){
+        System.out.println("从数据库读取任务");
     }
 }

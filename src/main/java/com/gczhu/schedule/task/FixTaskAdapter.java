@@ -16,7 +16,8 @@ public class FixTaskAdapter implements TaskAdapter {
     @Override
     public boolean runTask(TaskConfig taskConfig) {
         TaskExecuteService bean = applicationContext.getBean(
-                taskConfig.getTaskEnName(), TaskExecuteService.class);
+                taskConfig.getTaskEnName(),TaskExecuteService.class);
+        System.out.println("使用适配器:"+bean);
         if (bean != null) bean.doService(taskConfig);
         return true;
     }

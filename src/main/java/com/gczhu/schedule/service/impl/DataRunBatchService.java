@@ -5,11 +5,11 @@ import com.gczhu.schedule.service.TaskExecuteService;
 import org.springframework.stereotype.Service;
 
 @Service
-public class TimeOutOrderService implements TaskExecuteService {
-    private static String TASK_NAME = "超时订单处理任务";
+public class DataRunBatchService implements TaskExecuteService {
+    private static String TASK_NAME = "数据跑批业务";
     @Override
     public void doService(TaskConfig taskConfig) {
-        System.out.println("处理超时订单");
+        System.out.println("数据跑批业务");
     }
 
     @Override
