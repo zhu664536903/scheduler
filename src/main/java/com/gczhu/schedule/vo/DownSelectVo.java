@@ -1,11 +1,16 @@
 package com.gczhu.schedule.vo;
 
-public class DownSelectVo {
+import java.io.Serializable;
+
+public class DownSelectVo implements Serializable {
     private String label;
     private String value;
 
     public String getLabel() {
         return label;
+    }
+
+    public DownSelectVo() {
     }
 
     public DownSelectVo(String label, String value) {
